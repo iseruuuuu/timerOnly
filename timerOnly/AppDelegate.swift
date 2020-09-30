@@ -7,14 +7,24 @@
 
 import UIKit
 import CoreData
+import Firebase
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var window: UIWindow?
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Use Firebase library to configure APIs    ★←追記
+        FirebaseApp.configure()    //  ★←追記
+        
+        // Initialize Google Mobile Ads SDK, application IDを設定    ★←追記
+              GADMobileAds.configure(withApplicationID: "ca-app-pub-1763191370497028~1004565148")    //  ★←追記
+        
         return true
     }
 
